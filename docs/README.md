@@ -41,7 +41,7 @@
 5. 주문 메뉴 출력
 
 ```
-<주문메뉴>
+<주문 메뉴>
 티본스테이크 1개
 바비큐립 1개
 초코케이크 2개
@@ -111,6 +111,8 @@
 
 ### OutputView
 
+- 첫인사 출력 (printStart)
+- 해당 날짜 혜택 미리보기 안내 출력 (printDatePreview)
 - 주문메뉴 출력 (printMenu)
 - 할인전 총금액 출력 (printTotalAmount)
 - 증정 메뉴 출력 (printGiveaway)
