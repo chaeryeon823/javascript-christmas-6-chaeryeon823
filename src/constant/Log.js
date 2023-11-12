@@ -1,6 +1,6 @@
 export const OUTPUT_MESSAGE = {
-  START: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.\n",
-  DATE_PREVIEW: "에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n",
+  START: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.",
+  DATE_PREVIEW: "에 우테코 식당에서 받을 이벤트 혜택 미리 보기!",
   ORDER_MENU: "<주문메뉴>\n",
   TOTAL_AMOUNT: "<할인 전 총주문 금액>\n",
   GIVEAWAY: "<증정 메뉴>\n",
