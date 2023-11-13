@@ -9,6 +9,7 @@ class App {
     const date = await InputView.readDate();
     Console.print(date);
     const order = await InputView.readMenus();
+
   }
 }
 

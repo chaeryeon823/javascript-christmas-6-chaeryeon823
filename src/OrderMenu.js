@@ -15,6 +15,17 @@ class OrderMenu {
     this.#validateCount();
   }
 
+  printOrderMenu() {
+    Console.print("메뉴명 : "+this.#name);
+    Console.print("개수 : "+this.#count);
+  }
+  getCount() {
+    return this.#count;
+  }
+  getName() {
+    return this.#name;
+  }
+
   #splitMenuInput(menuInput) {
     const splitOrderMenu = menuInput.split(ORDER_MENU_COUNT_SPLIT);
     this.#validateSplitFormat(splitOrderMenu);
@@ -29,8 +40,7 @@ class OrderMenu {
   }
 
   #validateContainMenuList() {
-    Console.print(this.#name);
-    if (!this.#getMenuNames().includes(this.#name)) {
+    if (!this.#generateMenuNames().includes(this.#name)) {
       throw new Error(ERROR_MESSAGE.MENU + "메뉴판에 없음");
       //FIXME
     }
@@ -43,7 +53,7 @@ class OrderMenu {
     }
   }
 
-  #getMenuNames() {
+  #generateMenuNames() {
     return Object.values(MENU_INFO).reduce((acc, items) => {
       return acc.concat(items.map(item => item.name));
     }, []);
