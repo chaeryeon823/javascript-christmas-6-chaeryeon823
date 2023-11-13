@@ -72,7 +72,6 @@ class Order {
 
   calcTotalAmount() {
     return this.#orderMenus.reduce((sum, orderMenu) => {
-
       return sum + orderMenu.getMenuPrice();
     }, 0);
   }

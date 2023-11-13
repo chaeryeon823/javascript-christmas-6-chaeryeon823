@@ -2,7 +2,7 @@ import OutputView from "./View/OutputView.js";
 import InputView from "./View/InputView.js";
 import {Console} from "@woowacourse/mission-utils";
 import {MENU_INFO} from "./constant/MenuList.js";
-
+import Benefit from "./Benefit.js";
 class App {
   async run() {
     OutputView.printStart();
@@ -10,7 +10,10 @@ class App {
     const order = await InputView.readMenus();
     OutputView.printDatePreview(date);
     OutputView.printMenu(order);
-    OutputView.printTotalAmount(order);
+    const totalAmount = order.calcTotalAmount();
+    OutputView.printTotalAmount(totalAmount);
+    const benefit = new Benefit(totalAmount, date);
+    OutputView.printGiveaway(benefit);
   }
 }
 

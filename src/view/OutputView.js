@@ -12,9 +12,13 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.ORDER_MENU);
     order.printOrder();
   },
-  printTotalAmount(order) {
+  printTotalAmount(totalAmount) {
     Console.print(OUTPUT_MESSAGE.TOTAL_AMOUNT);
-    Console.print(order.calcTotalAmount().toLocaleString("ko-KR") + "원");
+    Console.print(totalAmount.toLocaleString("ko-KR") + "원");
+  },
+  printGiveaway(benefit) {
+    Console.print(OUTPUT_MESSAGE.GIVEAWAY);
+    Console.print(benefit.calcGiveaway());
   }
 
   // ...
