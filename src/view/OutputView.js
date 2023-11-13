@@ -8,10 +8,14 @@ const OutputView = {
   printDatePreview(date) {
     Console.print("12월 " + date + "일" + OUTPUT_MESSAGE.DATE_PREVIEW);
   },
-  printMenu() {
-    Console.print("<주문 메뉴>");
-    // 주문 메뉴 내역 출력 함수
+  printMenu(order) {
+    Console.print(OUTPUT_MESSAGE.ORDER_MENU);
+    order.printOrder();
   },
+  printTotalAmount(order) {
+    Console.print(OUTPUT_MESSAGE.TOTAL_AMOUNT);
+    Console.print(order.calcTotalAmount().toLocaleString("ko-KR") + "원");
+  }
 
   // ...
 };

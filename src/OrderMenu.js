@@ -16,12 +16,13 @@ class OrderMenu {
   }
 
   printOrderMenu() {
-    Console.print("메뉴명 : "+this.#name);
-    Console.print("개수 : "+this.#count);
+    Console.print(this.#name + " " + this.#count + "개");
   }
+
   getCount() {
     return this.#count;
   }
+
   getName() {
     return this.#name;
   }
@@ -57,6 +58,16 @@ class OrderMenu {
     return Object.values(MENU_INFO).reduce((acc, items) => {
       return acc.concat(items.map(item => item.name));
     }, []);
+  }
+
+  getMenuPrice() {
+    //FIXME
+    for(let course of Object.values(MENU_INFO)) {
+      let menu = course.find(menu => menu.name === this.#name);
+      if(menu !== undefined) {
+        return menu.price * this.#count;
+      }
+    }
   }
 }
 

@@ -29,7 +29,7 @@ export const MENU_INFO = {
     },
     {
       name: "해산물파스타",
-      price: 3500,
+      price: 35000,
       course: "메인",
     },
     {
@@ -66,7 +66,7 @@ export const MENU_INFO = {
       price: 25000,
       course: "음료",
     },
-  ],
+  ]
 }
 export const APPETIZER = [
   {

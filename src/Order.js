@@ -64,6 +64,18 @@ class Order {
     });
     return beverageNames;
   }
+  printOrder() {
+    this.#orderMenus.forEach((orderMenu) => {
+      orderMenu.printOrderMenu();
+    })
+  }
+
+  calcTotalAmount() {
+    return this.#orderMenus.reduce((sum, orderMenu) => {
+
+      return sum + orderMenu.getMenuPrice();
+    }, 0);
+  }
 
 }
 

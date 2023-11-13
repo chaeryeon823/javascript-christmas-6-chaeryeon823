@@ -7,9 +7,10 @@ class App {
   async run() {
     OutputView.printStart();
     const date = await InputView.readDate();
-    Console.print(date);
     const order = await InputView.readMenus();
     OutputView.printDatePreview(date);
+    OutputView.printMenu(order);
+    OutputView.printTotalAmount(order);
   }
 }
 

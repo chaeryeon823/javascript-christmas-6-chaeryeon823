@@ -1,13 +1,13 @@
 export const OUTPUT_MESSAGE = {
   START: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.",
   DATE_PREVIEW: "에 우테코 식당에서 받을 이벤트 혜택 미리 보기!",
-  ORDER_MENU: "<주문메뉴>\n",
-  TOTAL_AMOUNT: "<할인 전 총주문 금액>\n",
-  GIVEAWAY: "<증정 메뉴>\n",
-  BENEFIT: "<혜택 내역>\n",
-  BENEFIT_TOTAL_AMOUNT: "<총혜택 금액>\n",
-  PAY_AMOUNT: "<할인 후 예상 결제 금액>\n",
-  EVENT_BADGE: "<12월 이벤트 배지>\n",
+  ORDER_MENU: "<주문메뉴>",
+  TOTAL_AMOUNT: "<할인 전 총주문 금액>",
+  GIVEAWAY: "<증정 메뉴>",
+  BENEFIT: "<혜택 내역>",
+  BENEFIT_TOTAL_AMOUNT: "<총혜택 금액>",
+  PAY_AMOUNT: "<할인 후 예상 결제 금액>",
+  EVENT_BADGE: "<12월 이벤트 배지>",
 };
 
 export const INPUT_MESSAGE = {
