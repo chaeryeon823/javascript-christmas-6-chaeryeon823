@@ -20,7 +20,7 @@ class OrderMenu {
   }
 
   getCount() {
-    return this.#count;
+    return Number(this.#count);
   }
 
   getName() {

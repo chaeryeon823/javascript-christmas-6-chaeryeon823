@@ -33,7 +33,7 @@ class Order {
 
   #validateOnlyBeverage() {
     let menuNames = this.#generateMenuNames();
-    if (menuNames.every((menu) => this.#generateBeverageNames().includes(menu))) {
+    if (menuNames.every((menu) => this.#generateCourseNames(MENU_INFO.BEVERAGE).includes(menu))) {
       throw new Error(ERROR_MESSAGE.MENU + "음료만 주문");
       //FIXME
     }
@@ -57,12 +57,12 @@ class Order {
   }
 
 
-  #generateBeverageNames() {
-    let beverageNames = [];
-    Object.values(MENU_INFO.BEVERAGE).forEach((menu) => {
-      beverageNames.push(menu.name);
+  #generateCourseNames(course) {
+    let courseNames = [];
+    Object.values(course).forEach((menu) => {
+      courseNames.push(menu.name);
     });
-    return beverageNames;
+    return courseNames;
   }
   printOrder() {
     this.#orderMenus.forEach((orderMenu) => {
@@ -75,6 +75,17 @@ class Order {
       return sum + orderMenu.getMenuPrice();
     }, 0);
   }
+
+  countCourseMenu(course) {
+    const courseNames = this.#generateCourseNames(course);
+    return this.#orderMenus.reduce((count, orderMenu) => {
+      if(courseNames.includes(orderMenu.getName())) {
+        return count + orderMenu.getCount();
+      }
+      return count;
+    },0);
+  }
+
 
 }
 

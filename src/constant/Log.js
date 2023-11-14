@@ -16,3 +16,8 @@ export const INPUT_MESSAGE = {
 };
 
 export const ORDER_MENU_COUNT_SPLIT = "-"
+
+export const BENEFIT_MESSAGE = {
+  CHRISTMAS: "크리스마스 디데이 할인 : -",
+  WEEKDAY: "평일 할인 - "
+}

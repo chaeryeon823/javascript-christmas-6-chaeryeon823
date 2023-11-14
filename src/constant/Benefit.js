@@ -1,6 +1,7 @@
 export const GIVEAWAY = {
   NA: "없음",
   CHAMPAGNE: {
+    MENUNAME: "샴페인",
     CONTENT: "샴페인 1개",
     BASEAMOUNT: 120000,
   },
