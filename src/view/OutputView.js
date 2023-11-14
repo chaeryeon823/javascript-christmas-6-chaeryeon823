@@ -18,7 +18,7 @@ const OutputView = {
   },
   printGiveaway(benefit) {
     Console.print(OUTPUT_MESSAGE.GIVEAWAY);
-    Console.print(benefit.calcGiveaway());
+    benefit.printGiveaway();
   },
   printBenefit(benefit) {
     Console.print(OUTPUT_MESSAGE.BENEFIT);
