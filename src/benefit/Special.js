@@ -17,12 +17,17 @@ class Special {
   }
 
   #calcAmount() {
-    this.#amount = SPECIAL_BENEFIT;
+    if (this.#day === SUNDAY || this.#date === CHRISTMAS) {
+      this.#amount = SPECIAL_BENEFIT;
+      return;
+    }
+    this.#amount = 0;
+
   }
 
   print() {
-    if(this.#day === SUNDAY || this.#date === CHRISTMAS) {
-      if(this.#amount !== 0) {
+    if (this.#day === SUNDAY || this.#date === CHRISTMAS) {
+      if (this.#amount !== 0) {
         Console.print(BENEFIT_MESSAGE.SPECIAL + this.#amount.toLocaleString("ko-KR") + BENEFIT_MESSAGE.AFTER_KEYWORD);
       }
     }
@@ -33,4 +38,5 @@ class Special {
   }
 
 }
+
 export default Special;

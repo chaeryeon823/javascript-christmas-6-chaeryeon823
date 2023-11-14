@@ -29,6 +29,7 @@ class Benefit {
   #generateEventList() {
     const dateObj = new Date(BENEFIT_YEAR, BENEFIT_MONTH - 1, this.#date);
     let eventList = [];
+    //FIXME
     eventList.push(new Giveaway(this.#totalAmount));
     eventList.push(new ChristmasDay(dateObj.getDate()));
     eventList.push(new Weekday(dateObj.getDay(), this.#getCountDessert(), "WEEKDAY"))
@@ -59,7 +60,7 @@ class Benefit {
   #calcTotalBenefitAmount() {
     return this.#eventList.reduce((sum, event) => {
       return sum + event.getAmount();
-    })
+    }, 0);
   }
 
   #getCountMain() {
@@ -72,6 +73,10 @@ class Benefit {
 
   printGiveaway() {
     Console.print(this.#eventList[0].calcGiveaway());
+  }
+
+  printTotalBenefitAmount() {
+    Console.print("-" + this.#totalBenefitAmount.toLocaleString("ko-KR") + "원");
   }
 }
 

@@ -21,11 +21,15 @@ class Weekday {
   }
 
   #calcWeekday() {
-    this.#amount = this.#menuCount * WEEK_BENEFIT;
+    if (WEEK[this.#dayList].includes(this.#day)) {
+      this.#amount = this.#menuCount * WEEK_BENEFIT;
+      return;
+    }
+    this.#amount = 0;
   }
 
   print() {
-    if (WEEK[this.#dayList].includes(this.#day) && this.#amount !== 0) {
+    if (this.#amount !== 0) {
       Console.print(BENEFIT_MESSAGE[this.#dayList] + this.#amount.toLocaleString("ko-KR") + BENEFIT_MESSAGE.AFTER_KEYWORD);
     }
   }

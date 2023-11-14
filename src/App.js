@@ -16,6 +16,7 @@ class App {
     const benefit = new Benefit(totalAmount, date, order);
     OutputView.printGiveaway(benefit);
     OutputView.printBenefit(benefit);
+    OutputView.printTotalBenefitAmount(benefit);
 
   }
 }

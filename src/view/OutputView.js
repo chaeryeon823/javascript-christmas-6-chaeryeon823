@@ -23,6 +23,10 @@ const OutputView = {
   printBenefit(benefit) {
     Console.print(OUTPUT_MESSAGE.BENEFIT);
     benefit.printBenefit();
+  },
+  printTotalBenefitAmount(benefit) {
+    Console.print(OUTPUT_MESSAGE.BENEFIT_TOTAL_AMOUNT);
+    benefit.printTotalBenefitAmount();
   }
 
   // ...
