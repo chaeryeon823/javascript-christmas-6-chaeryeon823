@@ -17,6 +17,7 @@ class App {
     OutputView.printGiveaway(benefit);
     OutputView.printBenefit(benefit);
     OutputView.printTotalBenefitAmount(benefit);
+    OutputView.printPayAmount(benefit);
 
   }
 }

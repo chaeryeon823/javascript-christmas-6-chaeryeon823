@@ -58,9 +58,10 @@ class Benefit {
   }
 
   #calcTotalBenefitAmount() {
-    return this.#eventList.reduce((sum, event) => {
-      return sum + event.getAmount();
-    }, 0);
+    return this.#eventList
+      .reduce((sum, event) => {
+        return sum + event.getAmount();
+      }, 0);
   }
 
   #getCountMain() {
@@ -77,6 +78,12 @@ class Benefit {
 
   printTotalBenefitAmount() {
     Console.print("-" + this.#totalBenefitAmount.toLocaleString("ko-KR") + "원");
+  }
+
+  printPayAmount() {
+    //FIXME
+    const payAmount = this.#totalAmount - this.#totalBenefitAmount + this.#eventList[0].getAmount();
+    Console.print(payAmount.toLocaleString("ko-KR") + "원");
   }
 }
 

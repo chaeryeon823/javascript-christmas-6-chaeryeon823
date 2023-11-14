@@ -37,6 +37,8 @@ class Giveaway {
     return this.#amount;
   }
 
+
+
 }
 
 export default Giveaway;
