@@ -1,10 +1,10 @@
-import ChristmasDay from "../src/benefit/ChristmasDay";
-import Giveaway from "../src/benefit/Giveaway";
-import Special from "../src/benefit/Special";
-import Weekday from "../src/benefit/Week";
-import Order from "../src/Order";
-import OrderMenu from "../src/OrderMenu";
-import Benefit from "../src/Benefit";
+import ChristmasDay from "../src/benefit/ChristmasDay.js";
+import Giveaway from "../src/benefit/Giveaway.js";
+import Special from "../src/benefit/Special.js";
+import Weekday from "../src/benefit/Week.js";
+import Order from "../src/Order.js";
+import OrderMenu from "../src/OrderMenu.js";
+import Benefit from "../src/Benefit.js";
 
 /* eslint-disable no-undef */
 describe("크리스마스 디데이 혜택", () => {

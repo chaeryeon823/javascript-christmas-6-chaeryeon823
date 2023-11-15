@@ -1,6 +1,6 @@
-import Benefit from "../src/Benefit";
-import Order from "../src/Order";
-import OrderMenu from "../src/OrderMenu";
+import Benefit from "../src/Benefit.js";
+import Order from "../src/Order.js";
+import OrderMenu from "../src/OrderMenu.js";
 
 /* eslint-disable no-undef */
 describe("주문 메뉴 총 합계 금액 테스트", () => {

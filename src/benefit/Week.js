@@ -1,6 +1,3 @@
-import { Console } from "@woowacourse/mission-utils";
-import { BENEFIT_MESSAGE } from "../constant/Log.js";
-
 const WEEK_BENEFIT = 2023;
 const WEEK = {
   WEEKEND: [5, 6],

@@ -1,5 +1,5 @@
-import OutputView from "./View/OutputView.js";
-import InputView from "./View/InputView.js";
+import OutputView from "./view/OutputView.js";
+import InputView from "./view/InputView.js";
 import Benefit from "./Benefit.js";
 
 class App {

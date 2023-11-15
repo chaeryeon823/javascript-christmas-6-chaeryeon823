@@ -27,7 +27,6 @@ class Benefit {
   #generateEventList() {
     const dateObj = new Date(BENEFIT_YEAR, BENEFIT_MONTH - 1, this.#date);
     let eventList = [];
-    //FIXME
     eventList.push(new Giveaway(this.#totalAmount));
     eventList.push(new ChristmasDay(dateObj.getDate()));
     eventList.push(
@@ -74,7 +73,6 @@ class Benefit {
   }
 
   getPayAmount() {
-    //FIXME
     const payAmount =
       this.#totalAmount -
       this.#totalBenefitAmount +

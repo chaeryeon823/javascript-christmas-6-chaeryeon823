@@ -1,4 +1,4 @@
-import validateDate from "../src/validator/ValidateDate";
+import validateDate from "../src/validator/ValidateDate.js";
 
 /* eslint-disable no-undef */
 describe("날짜 테스트", () => {

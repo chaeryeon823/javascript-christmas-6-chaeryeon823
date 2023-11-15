@@ -1,4 +1,4 @@
-import OrderMenu from "../src/OrderMenu";
+import OrderMenu from "../src/OrderMenu.js";
 
 /* eslint-disable no-undef */
 describe("주문 각 메뉴별 테스트", () => {

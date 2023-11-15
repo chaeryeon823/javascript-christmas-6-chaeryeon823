@@ -1,5 +1,5 @@
-import Order from "../src/Order";
-import OrderMenu from "../src/OrderMenu";
+import Order from "../src/Order.js";
+import OrderMenu from "../src/OrderMenu.js";
 
 /* eslint-disable no-undef */
 describe("주문 예외 테스트", () => {
