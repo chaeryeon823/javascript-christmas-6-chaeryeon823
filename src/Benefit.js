@@ -4,6 +4,7 @@ import ChristmasDay from "./benefit/ChristmasDay.js";
 import Weekday from "./benefit/Week.js";
 import Special from "./benefit/Special.js";
 import Giveaway from "./benefit/Giveaway.js";
+import {EVENT_BADGE} from "./constant/Benefit.js";
 
 const BENEFIT_STANDARD = 10000;
 const BENEFIT_YEAR = 2023;
@@ -84,6 +85,23 @@ class Benefit {
     //FIXME
     const payAmount = this.#totalAmount - this.#totalBenefitAmount + this.#eventList[0].getAmount();
     Console.print(payAmount.toLocaleString("ko-KR") + "원");
+  }
+
+  printEventBadge() {
+    if (this.#totalBenefitAmount >= EVENT_BADGE.SANTA.AMOUNT) {
+      Console.print(EVENT_BADGE.SANTA.NAME);
+      return;
+    }
+    if (this.#totalBenefitAmount >= EVENT_BADGE.TREE.AMOUNT) {
+      Console.print(EVENT_BADGE.TREE.NAME);
+      return;
+    }
+    if (this.#totalBenefitAmount >= EVENT_BADGE.STAR.AMOUNT) {
+      Console.print(EVENT_BADGE.STAR.NAME);
+      return;
+    }
+    Console.print(EVENT_BADGE.NA);
+
   }
 }
 

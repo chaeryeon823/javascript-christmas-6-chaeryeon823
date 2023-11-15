@@ -8,7 +8,16 @@ export const GIVEAWAY = {
 }
 export const EVENT_BADGE = {
   NA: "없음",
-  STAR: "별",
-  TREE: "트리",
-  SANTA: "산타",
+  STAR: {
+    NAME: "별",
+    AMOUNT: 5000,
+  },
+  TREE: {
+    NAME: "트리",
+    AMOUNT: 10000,
+  },
+  SANTA: {
+    NAME: "산타",
+    AMOUNT: 20000,
+  },
 }

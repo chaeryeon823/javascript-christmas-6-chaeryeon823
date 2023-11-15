@@ -31,10 +31,12 @@ const OutputView = {
   printPayAmount(benefit) {
     Console.print(OUTPUT_MESSAGE.PAY_AMOUNT);
     benefit.printPayAmount();
-
+  },
+  printEventBadge(benefit) {
+    Console.print(OUTPUT_MESSAGE.EVENT_BADGE);
+    benefit.printEventBadge();
   }
 
-  // ...
 };
 
 export default OutputView;
