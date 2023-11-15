@@ -1,5 +1,4 @@
 import { BENEFIT_MESSAGE } from "../constant/Log.js";
-import { Console } from "@woowacourse/mission-utils";
 
 const DDAY_BENEFIT_STANDARD = 1000;
 const DDAY_BENEFIT = 100;
@@ -21,14 +20,6 @@ class ChristmasDay {
       return;
     }
     this.#amount = 0;
-  }
-
-  print() {
-    if (this.#amount !== 0) {
-      Console.print(
-        BENEFIT_MESSAGE.CHRISTMAS + this.#amount.toLocaleString("ko-KR")
-      );
-    }
   }
 
   getTitle() {

@@ -28,16 +28,6 @@ class Weekday {
     this.#amount = 0;
   }
 
-  print() {
-    if (this.#amount !== 0) {
-      Console.print(
-        BENEFIT_MESSAGE[this.#dayList] +
-          this.#amount.toLocaleString("ko-KR") +
-          BENEFIT_MESSAGE.AFTER_KEYWORD
-      );
-    }
-  }
-
   getAmount() {
     return this.#amount;
   }

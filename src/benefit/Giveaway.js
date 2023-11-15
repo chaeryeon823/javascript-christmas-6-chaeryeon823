@@ -1,7 +1,5 @@
 import { GIVEAWAY } from "../constant/Benefit.js";
 import { MENU_INFO } from "../constant/MenuList.js";
-import { BENEFIT_MESSAGE } from "../constant/Log.js";
-import { Console } from "@woowacourse/mission-utils";
 
 class Giveaway {
   #totalAmount;
@@ -27,16 +25,6 @@ class Giveaway {
       return;
     }
     this.#amount = 0;
-  }
-
-  print() {
-    if (this.#amount !== 0) {
-      Console.print(
-        BENEFIT_MESSAGE.GIVEAWAY +
-          this.#amount.toLocaleString("ko-KR") +
-          BENEFIT_MESSAGE.AFTER_KEYWORD
-      );
-    }
   }
 
   getAmount() {
