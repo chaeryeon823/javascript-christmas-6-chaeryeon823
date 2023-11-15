@@ -53,7 +53,6 @@ class OrderMenu {
   }
 
   getMenuPrice() {
-    //FIXME
     for (let course of Object.values(MENU_INFO)) {
       let menu = course.find((menu) => menu.name === this.#name);
       if (menu !== undefined) {
