@@ -66,5 +66,5 @@ export const MENU_INFO = {
       price: 25000,
       course: "음료",
     },
-  ]
-}
+  ],
+};

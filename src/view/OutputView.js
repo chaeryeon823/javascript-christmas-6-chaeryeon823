@@ -1,5 +1,5 @@
-import {Console} from "@woowacourse/mission-utils";
-import {OUTPUT_MESSAGE} from "../constant/Log.js";
+import { Console } from "@woowacourse/mission-utils";
+import { OUTPUT_MESSAGE } from "../constant/Log.js";
 
 const OutputView = {
   printStart() {
@@ -10,7 +10,9 @@ const OutputView = {
   },
   printMenu(order) {
     Console.print(OUTPUT_MESSAGE.ORDER_MENU);
-    order.printOrder();
+    order.getOrder().forEach((orderMenu) => {
+      Console.print(orderMenu.getName() + " " + orderMenu.getCount() + "개");
+    });
   },
   printTotalAmount(totalAmount) {
     Console.print(OUTPUT_MESSAGE.TOTAL_AMOUNT);
@@ -18,25 +20,39 @@ const OutputView = {
   },
   printGiveaway(benefit) {
     Console.print(OUTPUT_MESSAGE.GIVEAWAY);
-    benefit.printGiveaway();
+    Console.print(benefit.getGiveaway());
   },
   printBenefit(benefit) {
     Console.print(OUTPUT_MESSAGE.BENEFIT);
-    benefit.printBenefit();
+    if (benefit.isBenefit()) {
+      this.printBenefitTrue(benefit);
+      return;
+    }
+    Console.print("없음");
+  },
+  printBenefitTrue(benefit) {
+    benefit.getBenefit().forEach((event) => {
+      if (event.getAmount !== 0) {
+        Console.print(
+          event.getTitle + event.getAmount.toLocaleString("ko-KR") + "원"
+        );
+      }
+    });
   },
   printTotalBenefitAmount(benefit) {
     Console.print(OUTPUT_MESSAGE.BENEFIT_TOTAL_AMOUNT);
-    benefit.printTotalBenefitAmount();
+    Console.print(
+      "-" + benefit.getTotalBenefitAmount().toLocaleString("ko-KR") + "원"
+    );
   },
   printPayAmount(benefit) {
     Console.print(OUTPUT_MESSAGE.PAY_AMOUNT);
-    benefit.printPayAmount();
+    Console.print(benefit.getPayAmount().toLocaleString("ko-KR") + "원");
   },
   printEventBadge(benefit) {
     Console.print(OUTPUT_MESSAGE.EVENT_BADGE);
-    benefit.printEventBadge();
-  }
-
+    Console.print(benefit.getEventBadge());
+  },
 };
 
 export default OutputView;

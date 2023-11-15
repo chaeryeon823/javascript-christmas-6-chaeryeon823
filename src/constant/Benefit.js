@@ -5,7 +5,7 @@ export const GIVEAWAY = {
     CONTENT: "샴페인 1개",
     BASEAMOUNT: 120000,
   },
-}
+};
 export const EVENT_BADGE = {
   NA: "없음",
   STAR: {
@@ -20,4 +20,4 @@ export const EVENT_BADGE = {
     NAME: "산타",
     AMOUNT: 20000,
   },
-}
+};

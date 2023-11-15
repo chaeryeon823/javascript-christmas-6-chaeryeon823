@@ -1,7 +1,5 @@
 import OutputView from "./View/OutputView.js";
 import InputView from "./View/InputView.js";
-import {Console} from "@woowacourse/mission-utils";
-import {MENU_INFO} from "./constant/MenuList.js";
 import Benefit from "./Benefit.js";
 
 class App {
@@ -18,7 +16,7 @@ class App {
     OutputView.printBenefit(benefit);
     OutputView.printTotalBenefitAmount(benefit);
     OutputView.printPayAmount(benefit);
-
+    OutputView.printEventBadge(benefit);
   }
 }
 

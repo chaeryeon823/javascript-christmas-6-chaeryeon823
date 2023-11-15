@@ -1,7 +1,5 @@
-import {Console} from "@woowacourse/mission-utils";
-import orderMenu from "./OrderMenu.js";
-import {ERROR_MESSAGE} from "./constant/Error.js";
-import {MENU_INFO} from "./constant/MenuList.js";
+import { ERROR_MESSAGE } from "./constant/Error.js";
+import { MENU_INFO } from "./constant/MenuList.js";
 
 const MAX_MENU_COUNT = 20;
 
@@ -17,8 +15,7 @@ class Order {
 
   #validateMaxMenuCount() {
     if (this.#calcTotalMenuCount() > MAX_MENU_COUNT) {
-      throw new Error(ERROR_MESSAGE.MENU + "20개 넘김");
-      //FIXME
+      throw new Error(ERROR_MESSAGE.MENU);
     }
   }
 
@@ -26,36 +23,36 @@ class Order {
     let menuNames = this.#generateMenuNames();
     let setMenuNames = new Set(menuNames);
     if (menuNames.length !== setMenuNames.size) {
-      throw new Error(ERROR_MESSAGE.MENU + "중복검사");
-      //FIXME
+      throw new Error(ERROR_MESSAGE.MENU);
     }
   }
 
   #validateOnlyBeverage() {
     let menuNames = this.#generateMenuNames();
-    if (menuNames.every((menu) => this.#generateCourseNames(MENU_INFO.BEVERAGE).includes(menu))) {
-      throw new Error(ERROR_MESSAGE.MENU + "음료만 주문");
-      //FIXME
+    if (
+      menuNames.every((menu) =>
+        this.#generateCourseNames(MENU_INFO.BEVERAGE).includes(menu)
+      )
+    ) {
+      throw new Error(ERROR_MESSAGE.MENU);
     }
   }
 
   #calcTotalMenuCount() {
     let totalCount = 0;
-    this.#orderMenus.forEach(orderMenu => {
+    this.#orderMenus.forEach((orderMenu) => {
       totalCount += orderMenu.getCount();
     });
     return totalCount;
   }
 
-
   #generateMenuNames() {
     let menuNames = [];
     this.#orderMenus.forEach((menuName) => {
       menuNames.push(menuName.getName());
-    })
+    });
     return menuNames;
   }
-
 
   #generateCourseNames(course) {
     let courseNames = [];
@@ -64,10 +61,9 @@ class Order {
     });
     return courseNames;
   }
-  printOrder() {
-    this.#orderMenus.forEach((orderMenu) => {
-      orderMenu.printOrderMenu();
-    })
+
+  getOrder() {
+    return this.#orderMenus;
   }
 
   calcTotalAmount() {
@@ -79,14 +75,12 @@ class Order {
   countCourseMenu(course) {
     const courseNames = this.#generateCourseNames(course);
     return this.#orderMenus.reduce((count, orderMenu) => {
-      if(courseNames.includes(orderMenu.getName())) {
+      if (courseNames.includes(orderMenu.getName())) {
         return count + orderMenu.getCount();
       }
       return count;
-    },0);
+    }, 0);
   }
-
-
 }
 
 export default Order;

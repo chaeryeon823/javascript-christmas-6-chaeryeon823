@@ -1,9 +1,10 @@
-import {Console} from "@woowacourse/mission-utils";
-import {INPUT_MESSAGE} from "../constant/Log.js";
+import { Console } from "@woowacourse/mission-utils";
+import { INPUT_MESSAGE } from "../constant/Log.js";
 import validateDate from "../validator/ValidateDate.js";
 import OrderMenu from "../OrderMenu.js";
 import Order from "../Order.js";
 import ValidateCommon from "../validator/ValidateCommon.js";
+import { ERROR_MESSAGE } from "../constant/Error.js";
 const InputView = {
   async readDate() {
     try {
@@ -17,7 +18,7 @@ const InputView = {
   async readMenus() {
     try {
       const menuInput = await Console.readLineAsync(INPUT_MESSAGE.MENU);
-      ValidateCommon.checkEmpty(menuInput);
+      ValidateCommon.checkEmpty(menuInput, ERROR_MESSAGE.MENU);
 
       let menuInputList = menuInput.split(",");
       let orderMenuList = [];
@@ -31,6 +32,5 @@ const InputView = {
       return await InputView.readMenus();
     }
   },
-
 };
 export default InputView;

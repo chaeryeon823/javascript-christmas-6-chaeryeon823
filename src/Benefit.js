@@ -1,15 +1,13 @@
-import {MENU_INFO} from "./constant/MenuList.js";
-import {Console} from "@woowacourse/mission-utils";
+import { MENU_INFO } from "./constant/MenuList.js";
 import ChristmasDay from "./benefit/ChristmasDay.js";
 import Weekday from "./benefit/Week.js";
 import Special from "./benefit/Special.js";
 import Giveaway from "./benefit/Giveaway.js";
-import {EVENT_BADGE} from "./constant/Benefit.js";
+import { EVENT_BADGE } from "./constant/Benefit.js";
 
 const BENEFIT_STANDARD = 10000;
 const BENEFIT_YEAR = 2023;
 const BENEFIT_MONTH = 12;
-
 
 class Benefit {
   #totalAmount;
@@ -17,7 +15,6 @@ class Benefit {
   #order;
   #totalBenefitAmount;
   #eventList;
-
 
   constructor(totalAmount, date, order) {
     this.#totalAmount = totalAmount;
@@ -33,36 +30,31 @@ class Benefit {
     //FIXME
     eventList.push(new Giveaway(this.#totalAmount));
     eventList.push(new ChristmasDay(dateObj.getDate()));
-    eventList.push(new Weekday(dateObj.getDay(), this.#getCountDessert(), "WEEKDAY"))
-    eventList.push(new Weekday(dateObj.getDay(), this.#getCountMain(), "WEEKEND"));
+    eventList.push(
+      new Weekday(dateObj.getDay(), this.#getCountDessert(), "WEEKDAY")
+    );
+    eventList.push(
+      new Weekday(dateObj.getDay(), this.#getCountMain(), "WEEKEND")
+    );
     eventList.push(new Special(dateObj.getDate(), dateObj.getDay()));
 
     return eventList;
   }
 
-  printBenefit() {
+  isBenefit() {
     if (this.#totalAmount >= BENEFIT_STANDARD && this.#totalBenefitAmount > 0) {
-      this.#printOverBenefitStandard();
-      return;
+      return true;
     }
-    this.#printNoBenefit();
+    return false;
   }
-
-  #printNoBenefit() {
-    Console.print("없음");
-  }
-
-  #printOverBenefitStandard() {
-    this.#eventList.forEach(event => {
-      event.print();
-    });
+  getBenefit() {
+    return this.#eventList;
   }
 
   #calcTotalBenefitAmount() {
-    return this.#eventList
-      .reduce((sum, event) => {
-        return sum + event.getAmount();
-      }, 0);
+    return this.#eventList.reduce((sum, event) => {
+      return sum + event.getAmount();
+    }, 0);
   }
 
   #getCountMain() {
@@ -73,35 +65,34 @@ class Benefit {
     return this.#order.countCourseMenu(MENU_INFO.DESSERT);
   }
 
-  printGiveaway() {
-    Console.print(this.#eventList[0].calcGiveaway());
+  getGiveaway() {
+    return this.#eventList[0].calcGiveaway();
   }
 
-  printTotalBenefitAmount() {
-    Console.print("-" + this.#totalBenefitAmount.toLocaleString("ko-KR") + "원");
+  getTotalBenefitAmount() {
+    return this.#totalBenefitAmount;
   }
 
-  printPayAmount() {
+  getPayAmount() {
     //FIXME
-    const payAmount = this.#totalAmount - this.#totalBenefitAmount + this.#eventList[0].getAmount();
-    Console.print(payAmount.toLocaleString("ko-KR") + "원");
+    const payAmount =
+      this.#totalAmount -
+      this.#totalBenefitAmount +
+      this.#eventList[0].getAmount();
+    return payAmount;
   }
 
-  printEventBadge() {
+  getEventBadge() {
     if (this.#totalBenefitAmount >= EVENT_BADGE.SANTA.AMOUNT) {
-      Console.print(EVENT_BADGE.SANTA.NAME);
-      return;
+      return EVENT_BADGE.SANTA.NAME;
     }
     if (this.#totalBenefitAmount >= EVENT_BADGE.TREE.AMOUNT) {
-      Console.print(EVENT_BADGE.TREE.NAME);
-      return;
+      return EVENT_BADGE.TREE.NAME;
     }
     if (this.#totalBenefitAmount >= EVENT_BADGE.STAR.AMOUNT) {
-      Console.print(EVENT_BADGE.STAR.NAME);
-      return;
+      return EVENT_BADGE.STAR.NAME;
     }
-    Console.print(EVENT_BADGE.NA);
-
+    return EVENT_BADGE.NA;
   }
 }
 

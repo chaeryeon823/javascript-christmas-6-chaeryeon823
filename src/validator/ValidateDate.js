@@ -1,7 +1,7 @@
 import { ERROR_MESSAGE } from "../constant/Error.js";
 import ValidateCommon from "./ValidateCommon.js";
 function validateDate(dateInput) {
-  ValidateCommon.checkEmpty(dateInput);
+  ValidateCommon.checkEmpty(dateInput, ERROR_MESSAGE.DATE);
   const date = Number(dateInput);
   checkDateString(date);
   checkDateRange(date);
