@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import { OUTPUT_MESSAGE } from "../constant/Log.js";
-
+const KRW = "원";
+const MINUS = "-";
 const OutputView = {
   printStart() {
     Console.print(OUTPUT_MESSAGE.START);
@@ -16,7 +17,7 @@ const OutputView = {
   },
   printTotalAmount(totalAmount) {
     Console.print(OUTPUT_MESSAGE.TOTAL_AMOUNT);
-    Console.print(totalAmount.toLocaleString("ko-KR") + "원");
+    Console.print(totalAmount.toLocaleString("ko-KR") + KRW);
   },
   printGiveaway(benefit) {
     Console.print(OUTPUT_MESSAGE.GIVEAWAY);
@@ -34,7 +35,7 @@ const OutputView = {
     benefit.getBenefit().forEach((event) => {
       if (event.getAmount() !== 0) {
         Console.print(
-          event.getTitle() + event.getAmount().toLocaleString("ko-KR") + "원"
+          event.getTitle() + event.getAmount().toLocaleString("ko-KR") + KRW
         );
       }
     });
@@ -42,12 +43,12 @@ const OutputView = {
   printTotalBenefitAmount(benefit) {
     Console.print(OUTPUT_MESSAGE.BENEFIT_TOTAL_AMOUNT);
     Console.print(
-      "-" + benefit.getTotalBenefitAmount().toLocaleString("ko-KR") + "원"
+      MINUS + benefit.getTotalBenefitAmount().toLocaleString("ko-KR") + KRW
     );
   },
   printPayAmount(benefit) {
     Console.print(OUTPUT_MESSAGE.PAY_AMOUNT);
-    Console.print(benefit.getPayAmount().toLocaleString("ko-KR") + "원");
+    Console.print(benefit.getPayAmount().toLocaleString("ko-KR") + KRW);
   },
   printEventBadge(benefit) {
     Console.print(OUTPUT_MESSAGE.EVENT_BADGE);

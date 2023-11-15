@@ -23,7 +23,7 @@ class Special {
     this.#amount = 0;
   }
   getTitle() {
-    return BENEFIT_MESSAGE.SPECIAL_BENEFIT;
+    return BENEFIT_MESSAGE.SPECIAL;
   }
   getAmount() {
     return this.#amount;
