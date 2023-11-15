@@ -14,10 +14,10 @@ class Weekday {
     this.#day = day;
     this.#menuCount = menuCount;
     this.#dayList = dayList;
-    this.#calcWeekday();
+    this.#calcAmount();
   }
 
-  #calcWeekday() {
+  #calcAmount() {
     if (WEEK[this.#dayList].includes(this.#day)) {
       this.#amount = this.#menuCount * WEEK_BENEFIT;
       return;

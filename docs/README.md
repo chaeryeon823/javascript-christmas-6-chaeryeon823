@@ -25,12 +25,16 @@
 
 📣 예외 처리
 
-- 메뉴판에 없는 메뉴를 입력한 경우
-- 메뉴의 개수가 1 이상의 자연수가 아닌 경우
-- 메뉴 형식이 다른 경우 (메뉴명-메뉴개수)
-- 중복 메뉴를 입력한 경우
-- 메뉴의 총 개수 20개 초과인 경우
-- 음료만 주문 시, 주문할 수 없다.
+- 메뉴 예외사항 -> "해산물파스타-1"
+
+  - 메뉴판에 없는 메뉴를 입력한 경우
+  - 메뉴의 개수가 1 이상의 자연수가 아닌 경우
+  - 메뉴 형식이 다른 경우 (메뉴명-메뉴개수)
+
+- 주문 예외사항 -> "해산물파스타-1","레드와인-1"
+  - 중복 메뉴를 입력한 경우
+  - 메뉴의 총 개수 20개 초과인 경우
+  - 음료만 주문 시, 주문할 수 없다.
 
 4. 입력받은 날짜 출력
 
@@ -128,22 +132,39 @@
 
 ### OrderMenu
 
+- 메뉴 예외사항 처리
 - 메뉴당 금액 구하기 (calcAmount)
 
 ### Order
 
+- 주문 예외사항 처리
 - 주문 총 금액 구하기 (calcTotalAmount)
+- 코스 메뉴 개수 구하기 (countCourseMenu)
 
 ### Benefit
 
-- 크리스마스 디데이 할인 (calcDday)
-- 평일 할인 (calcWeekday)
-- 주말 할인 (calcWeekend)
-- 특별 할인 (calcSpecial)
-- 증정 이벤트 할인 (calcGiveaway)
+- 혜택 여부 (isBenefit)
+- 총 혜택 금액 구하기 (calcTotalBenefitAmount)
+- 할인 후 예상 결제 금액 (getPayAmount)
+- 12월 이벤트 배지 구하기 (getPayAmount)
 
-### TotalAmount
+### ChristmasDay
 
-- 혜택 내역 총 금액 (calcTotalBenefit)
-- 12월 이벤트 배지 (calcEventBadge)
-- 할인 후 예상 결제 금액 (calcPayAmount)
+- 날짜 저장
+- 크리스마스 디데이 혜택 구하기 (calcAmount)
+
+### Giveaway
+
+- 총 금액 저장
+- 증정 혜택 계산 문구 (calcGiveaway)
+- 증정 혜택 금액 구하기 (calcAmount)
+
+### Special
+
+- 요일과 날짜 저장
+- 특별 혜택 금액 구하기 (calcAmount)
+
+### Week
+
+- 요일과 메뉴 개수(메인 메뉴 개수/디저트메뉴 개수) 원하는 혜택(주말/평일) 저장
+- 주말 혜택 혹은 평일 혜택 금액 구하기 (calcAmount)
