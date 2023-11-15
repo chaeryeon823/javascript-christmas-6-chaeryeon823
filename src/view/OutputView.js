@@ -32,9 +32,9 @@ const OutputView = {
   },
   printBenefitTrue(benefit) {
     benefit.getBenefit().forEach((event) => {
-      if (event.getAmount !== 0) {
+      if (event.getAmount() !== 0) {
         Console.print(
-          event.getTitle + event.getAmount.toLocaleString("ko-KR") + "원"
+          event.getTitle() + event.getAmount().toLocaleString("ko-KR") + "원"
         );
       }
     });

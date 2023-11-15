@@ -1,3 +1,5 @@
+import { BENEFIT_MESSAGE } from "../constant/Log.js";
+
 const SPECIAL_BENEFIT = 1000;
 const SUNDAY = 0;
 const CHRISTMAS = 25;
@@ -20,7 +22,9 @@ class Special {
     }
     this.#amount = 0;
   }
-
+  getTitle() {
+    return BENEFIT_MESSAGE.SPECIAL_BENEFIT;
+  }
   getAmount() {
     return this.#amount;
   }

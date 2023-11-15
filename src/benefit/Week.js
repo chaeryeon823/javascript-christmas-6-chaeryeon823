@@ -1,3 +1,5 @@
+import { BENEFIT_MESSAGE } from "../constant/Log.js";
+
 const WEEK_BENEFIT = 2023;
 const WEEK = {
   WEEKEND: [5, 6],
@@ -25,6 +27,14 @@ class Weekday {
     this.#amount = 0;
   }
 
+  getTitle() {
+    if (this.#dayList === "WEEKEND") {
+      return BENEFIT_MESSAGE.WEEKEND;
+    }
+    if (this.#dayList === "WEEKDAY") {
+      return BENEFIT_MESSAGE.WEEKDAY;
+    }
+  }
   getAmount() {
     return this.#amount;
   }

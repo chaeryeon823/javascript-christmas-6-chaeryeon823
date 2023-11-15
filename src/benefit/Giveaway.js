@@ -1,6 +1,6 @@
 import { GIVEAWAY } from "../constant/Benefit.js";
 import { MENU_INFO } from "../constant/MenuList.js";
-
+import { BENEFIT_MESSAGE } from "../constant/Log.js";
 class Giveaway {
   #totalAmount;
   #amount;
@@ -26,7 +26,9 @@ class Giveaway {
     }
     this.#amount = 0;
   }
-
+  getTitle() {
+    return BENEFIT_MESSAGE.GIVEAWAY;
+  }
   getAmount() {
     return this.#amount;
   }
